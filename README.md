@@ -8,26 +8,26 @@ A distributed, portable Content Delivery Network (CDN) prototype featuring auton
 
 ```mermaid
 graph TD
-    Client[Concurrent Clients / Users] -->|HTTP Requests| Router[QoS Router / Load Balancer :9000]
-    
-    subgraph Edge Layer
-        Router -->|Lowest latency / Load-aware| Edge1[Edge Node 1 :8001<br/>LRU Disk Cache]
-        Router -->|Locality / Available| Edge2[Edge Node 2 :8002<br/>LRU Disk Cache]
-        Router -->|Lowest latency / Load-aware| Edge3[Edge Node 3 :8003<br/>LRU Disk Cache]
-    end
-    
-    subgraph Origin Layer
-        Edge1 -->|Cache Miss| Origin[Origin Server :5000<br/>cdn_images]
-        Edge2 -->|Cache Miss| Origin
-        Edge3 -->|Cache Miss| Origin
-        Router -.->|Fallback if all edges fail| Origin
+    Client["Concurrent Clients / Users"] -->|"HTTP Requests"| Router["QoS Router (:9000)"]
+
+    subgraph EdgeLayer ["Edge Layer"]
+        Router -->|"Lowest Latency / Load-aware"| Edge1["Edge Node 1 (:8001) - LRU Cache"]
+        Router -->|"Locality / Available"| Edge2["Edge Node 2 (:8002) - LRU Cache"]
+        Router -->|"Lowest Latency / Load-aware"| Edge3["Edge Node 3 (:8003) - LRU Cache"]
     end
 
-    subgraph Telemetry & Control
-        Dashboard[Live Dashboard :9100<br/>Traffic Simulator] -->|Polls metrics & routes| Router
-        Dashboard -->|Polls health & hits/misses| Edge1
-        Dashboard -->|Polls health & hits/misses| Edge2
-        Dashboard -->|Polls health & hits/misses| Edge3
+    subgraph OriginLayer ["Origin Layer"]
+        Edge1 -->|"Cache Miss"| Origin["Origin Server (:5000)"]
+        Edge2 -->|"Cache Miss"| Origin
+        Edge3 -->|"Cache Miss"| Origin
+        Router -.->|"Failover Fallback"| Origin
+    end
+
+    subgraph TelemetryLayer ["Telemetry & Control"]
+        Dashboard["Live Dashboard (:9100)"] -->|"Metrics & Routing"| Router
+        Dashboard -->|"Health & Hit/Miss"| Edge1
+        Dashboard -->|"Health & Hit/Miss"| Edge2
+        Dashboard -->|"Health & Hit/Miss"| Edge3
     end
 ```
 
