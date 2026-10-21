@@ -7,28 +7,36 @@ A distributed, portable Content Delivery Network (CDN) prototype featuring auton
 ## Architecture Overview
 
 ```mermaid
-graph TD
-    Client["Concurrent Clients / Users"] -->|"HTTP Requests"| Router["QoS Router (:9000)"]
+flowchart TD
+    Client["Concurrent Clients"] -->|HTTP Requests| Router["QoS Router (:9000)"]
 
     subgraph EdgeLayer ["Edge Layer"]
-        Router -->|"Lowest Latency / Load-aware"| Edge1["Edge Node 1 (:8001) - LRU Cache"]
-        Router -->|"Locality / Available"| Edge2["Edge Node 2 (:8002) - LRU Cache"]
-        Router -->|"Lowest Latency / Load-aware"| Edge3["Edge Node 3 (:8003) - LRU Cache"]
+        Edge1["Edge Node 1 (:8001) - LRU Cache"]
+        Edge2["Edge Node 2 (:8002) - LRU Cache"]
+        Edge3["Edge Node 3 (:8003) - LRU Cache"]
     end
 
     subgraph OriginLayer ["Origin Layer"]
-        Edge1 -->|"Cache Miss"| Origin["Origin Server (:5000)"]
-        Edge2 -->|"Cache Miss"| Origin
-        Edge3 -->|"Cache Miss"| Origin
-        Router -.->|"Failover Fallback"| Origin
+        Origin["Origin Server (:5000)"]
     end
 
     subgraph TelemetryLayer ["Telemetry & Control"]
-        Dashboard["Live Dashboard (:9100)"] -->|"Metrics & Routing"| Router
-        Dashboard -->|"Health & Hit/Miss"| Edge1
-        Dashboard -->|"Health & Hit/Miss"| Edge2
-        Dashboard -->|"Health & Hit/Miss"| Edge3
+        Dashboard["Live Dashboard (:9100) - Traffic Simulator"]
     end
+
+    Router -->|Lowest Latency| Edge1
+    Router -->|Locality / Available| Edge2
+    Router -->|Load-aware| Edge3
+
+    Edge1 -->|Cache Miss| Origin
+    Edge2 -->|Cache Miss| Origin
+    Edge3 -->|Cache Miss| Origin
+    Router -.->|Fallback if Edges Fail| Origin
+
+    Dashboard -->|Metrics & Routing| Router
+    Dashboard -->|Health & Hit/Miss| Edge1
+    Dashboard -->|Health & Hit/Miss| Edge2
+    Dashboard -->|Health & Hit/Miss| Edge3
 ```
 
 ---
@@ -128,5 +136,8 @@ Access the UI at: **`http://127.0.0.1:9100`**
 
 ---
 
-## Author
+## Project Team & Authors
 - **RAMADURGAM PRADYUMNA** ([@pradyumna0222](https://github.com/pradyumna0222))
+- **K. Gowtham Reddy**
+- **Varun Tej**
+- **KVV Satya Teja**
