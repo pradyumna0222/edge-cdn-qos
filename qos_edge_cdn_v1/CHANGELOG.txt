@@ -1,0 +1,8 @@
+QoS Edge CDN dashboard update
+- Removed two explanatory sections requested by user.
+- Replaced topology cards with simple request-path architecture diagram.
+- Overload uses weighted degraded routing (0.30 edge weight vs 1.0 healthy peers).
+- Added traffic counts scoped to the currently running overload experiment.
+- Added reversible simulated edge outage control.
+- Added origin-side content-request metrics endpoint; edge-node code and cache files remain untouched.
+- Heartbeat remains every 3 seconds; protocol scope remains HTTP-only.
