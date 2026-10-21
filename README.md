@@ -1,5 +1,8 @@
 # QoS-Aware Edge CDN & Live Monitoring Platform
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Security Policy](https://img.shields.io/badge/Security-Policy-green.svg)](SECURITY.md)
+
 A distributed, portable Content Delivery Network (CDN) prototype featuring autonomous edge caching with LRU eviction, dynamic QoS-aware load balancing, origin fallback, and a real-time web telemetry dashboard.
 
 ---
@@ -142,4 +145,10 @@ Access the UI at: **`http://127.0.0.1:9100`**
 - **Gnana Sai Varma K** ([@GnanaSaiVarmaK](https://github.com/GnanaSaiVarmaK))
 - **Varun Tej** ([@varuntej0817](https://github.com/varuntej0817))
 - **RAMADURGAM PRADYUMNA** ([@pradyumna0222](https://github.com/pradyumna0222))
-  
+
+---
+
+## License & Security
+- **License:** Distributed under the [MIT License](LICENSE).
+- **Security:** Vulnerability reporting guidelines and architecture considerations are documented in [SECURITY.md](SECURITY.md).
+
