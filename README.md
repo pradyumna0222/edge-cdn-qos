@@ -141,5 +141,5 @@ Access the UI at: **`http://127.0.0.1:9100`**
 - **K. Gowtham Reddy**
 - **Gnana Sai Varma K**
 - **Varun Tej**
-- - **RAMADURGAM PRADYUMNA** ([@pradyumna0222](https://github.com/pradyumna0222))
+- **RAMADURGAM PRADYUMNA** ([@pradyumna0222](https://github.com/pradyumna0222))
   
