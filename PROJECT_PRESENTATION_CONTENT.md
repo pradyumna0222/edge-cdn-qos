@@ -7,8 +7,8 @@
 - **Title:** QoS-Aware Edge Content Delivery Network (CDN) & Live Telemetry Platform
 - **Subtitle:** Intelligent Low-Latency Edge Selection, LRU Cache Management, and Real-Time Telemetry
 - **Authors & Presenters:**
-  - KVV Satya Teja ([@k-tejzz](https://github.com/k-tejzz))
-  - K. Gowtham Reddy
+  - KVV Sathya Teja ([@k-tejzz](https://github.com/k-tejzz))
+  - K. Gowtham Reddy ([@Gowthamreddyyyy](https://github.com/Gowthamreddyyyy))
   - Gnana Sai Varma K ([@GnanaSaiVarmaK](https://github.com/GnanaSaiVarmaK))
   - Varun Tej ([@varuntej0817](https://github.com/varuntej0817))
   - RAMADURGAM PRADYUMNA ([@pradyumna0222](https://github.com/pradyumna0222))

@@ -141,7 +141,7 @@ Access the UI at: **`http://127.0.0.1:9100`**
 
 ## Project Team & Authors
 - **KVV Sathya Teja** ([@k-tejzz](https://github.com/k-tejzz))
-- **K. Gowtham Reddy**
+- **K. Gowtham Reddy** ([@Gowthamreddyyyy](https://github.com/Gowthamreddyyyy))
 - **Gnana Sai Varma K** ([@GnanaSaiVarmaK](https://github.com/GnanaSaiVarmaK))
 - **Varun Tej** ([@varuntej0817](https://github.com/varuntej0817))
 - **RAMADURGAM PRADYUMNA** ([@pradyumna0222](https://github.com/pradyumna0222))
