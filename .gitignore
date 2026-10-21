@@ -3,6 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# IDE and Editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Runtime Edge CDN Cache (Keep folder structure, ignore cached media)
+qos_edge_cdn_v1/cache/*/*
+!qos_edge_cdn_v1/cache/*/.gitkeep
+
 # C extensions
 *.so
 
